@@ -3,7 +3,7 @@ setlocal
 
 where python >nul 2>&1
 if %errorlevel% neq 0 (
-    echo \u0050\u0079\u0074\u0068\u006f\u006e\u0020\u043d\u0435\u0020\u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0020\u043d\u0430\u0020\u044d\u0442\u043e\u043c\u0020\u041f\u041a\u002e\u000a.
+    echo Python is not installed on this PC.
     pause
     exit /b 1
 )
@@ -11,9 +11,9 @@ if %errorlevel% neq 0 (
 for /f "tokens=2 delims==" %%i in ('python -c "import sys; print(sys.version[:5])"') do set PY_VER=%%i
 
 if "%PY_VER%"=="3.11." (
-    echo \u0050\u0079\u0074\u0068\u006f\u006e\u0020\u0033\u002e\u0031\u0031\u0020\u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0020\u043d\u0430\u0020\u044d\u0442\u043e\u043c\u0020\u041f\u041a
+    echo Python 3.11 is installed on this PC
 ) else (
-    echo \u0050\u0079\u0074\u0068\u006f\u006e\u0020\u0033\u002e\u0031\u0031\u0020\u043d\u0435\u0020\u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u002e\u0020\u0423\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043d\u0430\u044f\u0020\u0432\u0435\u0440\u0441\u0438\u044f\u003a\u0020 %PY_VER%
+    echo Python 3.11 is not installed. Installed version: %PY_VER%
 )
 
 pause
