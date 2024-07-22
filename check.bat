@@ -1,6 +1,9 @@
 @echo off
 setlocal
 
+REM Установка кодировки UTF-8
+chcp 65001 >nul
+
 REM Проверка, установлен ли Python
 where python >nul 2>&1
 if %errorlevel% neq 0 (
