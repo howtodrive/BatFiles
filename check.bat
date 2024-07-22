@@ -8,12 +8,12 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-for /f "tokens=2 delims==" %%i in ('python -c "import sys; print(sys.version[:5])"') do set PY_VER=%%i
-
-if "%PY_VER%"=="3.11." (
-    echo Python 3.11 is installed on this PC
-) else (
-    echo Python 3.11 is not installed. Installed version: %PY_VER%
+for /f "tokens=2 delims= " %%i in ('python --version 2>&1') do (
+    if "%%i"=="3.11.0" (
+        echo Python 3.11 is installed on this PC
+    ) else (
+        echo Python 3.11 is not installed. Installed version: %%i
+    )
 )
 
 pause
