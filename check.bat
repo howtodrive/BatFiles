@@ -20,4 +20,3 @@ if "%PY_VER%"=="3.11." (
 )
 
 pause
-endlocal
